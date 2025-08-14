@@ -5,15 +5,15 @@ import { CertificadosComponent } from './pages/certificados/certificados.compone
 
 export const routes: Routes = [
   {
-    path:"",
+    path: "",
     component: CertificadoComponent
   },
   {
-    path:"certificados/novo",
+    path: "certificados/novo",
     component: CertificadoFormComponent
   },
   {
-    path:"certificados/:id",
+    path: "certificados/:id",
     component: CertificadosComponent
   },
 ];

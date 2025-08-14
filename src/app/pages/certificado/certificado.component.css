@@ -5,6 +5,7 @@
 
 .btn-voltar {
   gap: 6px;
+  cursor: pointer;
 
 }
 
@@ -15,6 +16,7 @@
   letter-spacing: 0;
   vertical-align: middle;
   color: #6474bb;
+  cursor: pointer;
 }
 
 .btn-voltar i {
