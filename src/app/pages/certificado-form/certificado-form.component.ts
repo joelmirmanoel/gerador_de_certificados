@@ -14,6 +14,7 @@ import { v4 as uuid4 } from 'uuid';
   styleUrl: './certificado-form.component.css'
 })
 export class CertificadoFormComponent {
+  route: any;
 
   constructor(private certificadoService: CertificadoService){  }
   @ViewChild('form') form!: NgForm
@@ -55,17 +56,18 @@ export class CertificadoFormComponent {
     }
     this.certificado.dataEmissao = this.dataAtual();
     this.certificado.id = uuid4();
-    this.certificadoService.adicionarCertifiado(this.certificado);
+    this.certificadoService.adicionarCertificado(this.certificado);
 
-    this.certificado = this.estadoInicialCertificado();
-    this.form.resetForm();
+    this.route.navigate(['certificados', this.certificado.id]);
+    //this.certificado = this.estadoInicialCertificado();
+    //this.form.resetForm();
 
   }
 
   dataAtual(){
     const dataAtual = new Date();
     const dia = String(dataAtual.getDate()).padStart(2,'0');
-    const mes = String(dataAtual.getMonth() +1).padStart(2,'0');
+    const mes = String(dataAtual.getMonth() + 1).padStart(2,'0');
     const ano = dataAtual.getFullYear();
 
     const dataFormatada = `${dia}/${mes}/${ano}`;
@@ -73,7 +75,7 @@ export class CertificadoFormComponent {
 
   }
 
-  estadoInicialCertificado() {
+  estadoInicialCertificado(): Certificado {
     return {
       id: '',
       atividades: [],

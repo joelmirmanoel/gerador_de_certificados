@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
-import { NgClass } from "../../../../node_modules/@angular/common/common_module.d-NEF7UaHr";
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',

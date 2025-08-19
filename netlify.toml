@@ -1,0 +1,9 @@
+[build]
+comand = "ng build --configuration=production"
+publish = "dist/gerador-certificado/browser"
+
+[[redirests]]
+from = "/*"
+to = "/index.html"
+status = 200
+

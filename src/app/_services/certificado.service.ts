@@ -10,8 +10,8 @@ export class CertificadoService {
 
   constructor() { }
 
-  adicionarCertifiado(certificado: Certificado){
-    this.certificados.push({ ...certificado });
+  adicionarCertificado(certificado: Certificado){
+    this.certificados.unshift({ ...certificado });
     localStorage.setItem('certificados',JSON.stringify(this.certificados) );
   }
 }
